@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 
 export class PlaneTypeService {
   private headers: HttpHeaders;
-  private accessPointUrl: string = 'http://localhost:65342/api/planeTypes';
+  private accessPointUrl: string = 'http://localhost:65343/api/planeTypes';
 
   constructor(private http: HttpClient) {
     this.headers = new HttpHeaders({'Content-Type': 'application/json; charset=utf-8'});
