@@ -1,0 +1,21 @@
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+      <tr>
+          <th>Plane Model</th>
+          <th>Seats Number</th>
+          <th>Carrying</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let planeType in planeTypes">
+        <td>{{ planeType.PlaneModel | string }}</td>
+        <td>{{ planeType.SeatsNumber | number }}</td>
+        <td>{{ planeType.Carrying }}</td>
+        <td>
+            <a href="#" (click)="editRecord(this)">Edit</a>
+            <a href="#" (click)="deleteRecord(this)">Delete</a>
+        </td>
+        <td></td>
+      </tr>
+  </tbody>
+</table>
