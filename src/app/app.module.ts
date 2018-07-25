@@ -8,7 +8,9 @@ import { componentRefresh } from '../../node_modules/@angular/core/src/render3/i
 import { PlaneTypeListComponent } from './plane-type-list/plane-type-list.component';
 import { PlaneTypeDetailsComponent } from './PlaneType/plane-type-details/plane-type-details.component';
 import { PlaneTypeService } from './PlaneType/Service/plane-type.service';
-import { HomeComponent } from './home/home.component'
+import { HomeComponent } from './home/home.component';
+import { StewardessesListComponent } from './Stewardess/stewardesses-list/stewardesses-list.component';
+import { StewardessService } from './Stewardess/StewardessService/stewardess.service';
 
 // const appRoutes: Routes = [
 //  { path: '/home', component: HomeComponent }
@@ -19,7 +21,8 @@ import { HomeComponent } from './home/home.component'
     AppComponent,
     PlaneTypeListComponent,
     PlaneTypeDetailsComponent,
-    HomeComponent
+    HomeComponent,
+    StewardessesListComponent
   ],
   imports: [
     BrowserModule,
@@ -27,7 +30,8 @@ import { HomeComponent } from './home/home.component'
     HttpClientModule     
   ],
   providers: [
-    PlaneTypeService
+    PlaneTypeService,
+    StewardessService
   ],
   bootstrap: [AppComponent]
 })

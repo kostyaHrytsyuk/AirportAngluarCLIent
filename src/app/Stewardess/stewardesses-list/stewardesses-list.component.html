@@ -1,0 +1,22 @@
+<table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Birth Date</th>
+            <th>Crew Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let stewardess of stewardesses">
+          <td>{{ stewardess?.firstName }}</td>
+          <td>{{ stewardess?.lastName }}</td>
+          <td>{{ stewardess?.birthDate }}</td>
+          <td>{{ stewardess?.crewId }}</td>
+          <td>
+              <a href="#" (click)="editRecord(this)">Edit</a>
+              <a href="#" (click)="deleteRecord(this)">Delete</a>
+          </td>
+        </tr>
+    </tbody>
+  </table>
