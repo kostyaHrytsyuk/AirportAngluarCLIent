@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PlaneTypeService } from '../PlaneType/Service/plane-type.service';
-import { StewardessService } from '../Stewardess/Service/stewardess.service';
 import * as _ from 'lodash';
 
 @Component({

@@ -1,7 +1,7 @@
 <div class="container">
   <div>
-    <h2 *ngIf="!stewardessInfo || stewardessInfo.id === undefined">Add Stewardess</h2>
-    <h2 *ngIf="stewardessInfo && stewardessInfo.id !== undefined">Update Stewardess</h2>
+    <h2 *ngIf="stewardessInfo.id === 0">Add Stewardess</h2>
+    <h2 *ngIf="stewardessInfo.id !== 0">Update Stewardess</h2>
     <form>
         <div class="form-group">
             <label for="firstName-input">First Name:</label>
@@ -21,8 +21,8 @@
         </div>
         <div class="d-flex justify-content-around">
             <button class="btn btn-dark" [routerLink]="['/stewardesses']">Back</button>
-            <button class="btn btn-primary" type="button" *ngIf="!stewardessInfo || stewardessInfo.id === undefined" (click)="createOrUpdateStewardess()">Add Stewardess</button>
-            <button class="btn btn-primary" type="button" *ngIf="stewardessInfo && stewardessInfo.id !== undefined" (click)="createOrUpdateStewardess()">Update Stewardess</button>
+            <button class="btn btn-primary" type="button" *ngIf="stewardessInfo.id === 0" (click)="createOrUpdateStewardess()">Add Stewardess</button>
+            <button class="btn btn-primary" type="button" *ngIf="stewardessInfo.id !== 0" (click)="createOrUpdateStewardess()">Update Stewardess</button>
         </div>
     </form>
   </div>

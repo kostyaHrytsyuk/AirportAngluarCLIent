@@ -9,28 +9,16 @@ import * as _ from 'lodash';
   styleUrls: ['./stewardesses-list.component.css']
 })
 export class StewardessesListComponent implements OnInit {
-  @Output() createClick = new EventEmitter<any>();
-  @Output() deleteClick = new EventEmitter<any>();
-  @Output() updateClick = new EventEmitter<any>();
-
-  public stewardesses: Array<any>;
-  public currentStewardess: any;
+  public stewardesses: Array<Stewardess>;
+  public currentStewardess: Stewardess;
 
   constructor(private stewardessesService: StewardessService) {
     
    }
 
    ngOnInit() {
-    this.stewardessesService.getAll().subscribe((data : any ) => this.stewardesses = data);
+    this.stewardessesService.getAll().subscribe((data : Stewardess[] ) => this.stewardesses = data);
   }
-
-  // public createItem(){
-  //   this.createClick.emit();
-  //   }
-
-  //   public createClicked = function(item){
-  //     this.currentStewardess = this.setDefaultValuesForStewardess();
-  //   }
 
   public deleteItem(item){
     const delIndex = _.findIndex(this.stewardesses, {id: item.id});
@@ -38,13 +26,5 @@ export class StewardessesListComponent implements OnInit {
       result => this.stewardesses.splice(delIndex,1)
     );
   }
-
-  // public updateItem = function(item){
-  //   this.currentStewardess = item;
-  // };
-  
-
-
-  
 
 }
