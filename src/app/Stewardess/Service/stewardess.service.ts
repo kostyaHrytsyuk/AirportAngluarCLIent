@@ -13,8 +13,10 @@ export class StewardessService {
   }
 
   public getAll()
-  {
-    return this.http.get(this.accessPointUrl, {headers: this.headers});
+  { 
+    var items = this.http.get(this.accessPointUrl, {headers: this.headers});
+    debugger;
+    return items;
   }
 
   public get(id)
@@ -22,14 +24,15 @@ export class StewardessService {
     return this.http.get(this.accessPointUrl + '/' + id, {headers: this.headers});
   }
 
-  public create(planeType)
+  public create(stewardess)
   {
-    return this.http.post(this.accessPointUrl, planeType, {headers: this.headers});
+    debugger;
+    return this.http.post(this.accessPointUrl, stewardess, {headers: this.headers});
   }
 
-  public update(planeType)
+  public update(stewardess)
   {
-    return this.http.put(this.accessPointUrl + '/' + planeType, {headers: this.headers});
+    return this.http.put(this.accessPointUrl + '/' + stewardess.id, stewardess, {headers: this.headers});
   }
 
   public delete(id)
