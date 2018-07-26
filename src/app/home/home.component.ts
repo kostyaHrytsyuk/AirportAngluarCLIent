@@ -31,10 +31,10 @@ export class HomeComponent implements OnInit {
     this.currentPlaneType = this.setDefaultValuesForPlaneType();
   }
 
-  public homeDeleteClicked(item){
+  public deleteClick(item){
     debugger;
     const delIndex = _.findIndex(this.planeTypes, {id: item.id});
-    this.planeTypeService.delete(item).subscribe(
+    this.planeTypeService.delete(item.id).subscribe(
       result => this.planeTypes.splice(delIndex,1)
     );
   }

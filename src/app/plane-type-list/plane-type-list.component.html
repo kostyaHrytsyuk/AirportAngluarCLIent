@@ -14,8 +14,8 @@
         <td>{{ planeType?.seatsNumber | number }}</td>
         <td>{{ planeType?.carrying }}</td>
         <td>
-            <a class="btn btn-dark" href="#" (click)="updateItem(this)">Edit</a>
-            <a class="btn btn-dark" href="#" (click)="deleteItem(this)">Delete</a>
+            <button class="btn btn-dark" (click)="updateItem(planeType)">Edit</button>
+            <button class="btn btn-dark" (click)="deleteItem(planeType)">Delete</button>
         </td>
       </tr>
   </tbody>

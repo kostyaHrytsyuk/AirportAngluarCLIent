@@ -36,6 +36,7 @@ export class PlaneTypeService {
   public delete(id)
   {
     debugger;
-    return this.http.delete(this.accessPointUrl + '/' + id, {headers: this.headers});
+    var link = this.http.delete(this.accessPointUrl + '/' + id, {headers: this.headers});
+    return link;
   }
 }
