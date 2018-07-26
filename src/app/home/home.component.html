@@ -1,14 +1,15 @@
 <p>
   Home works!
 </p>
-<div class="col-md-7">
-  <app-plane-type-list [planeTypes]="planeTypes"></app-plane-type-list>
+<div class="row">
+<div class="col-md-6">
+  <app-plane-type-list [planeTypes]="planeTypes" (createItem)="createClicked()" (deleteItem)="homeDeleteClicked($event)" (updateItem)="updateClicked($event)"></app-plane-type-list>
 </div>
 
-<div class="col-md-7">
+<div class="col-md-5">
     <app-plane-type-details (planeTypeCreated)="createOrUpdatePlaneType($event)" [planeTypeInfo]="currentPlaneType"></app-plane-type-details>
 </div>
-
-<div class="col-md-7">
-    <app-stewardesses-list [stewardesses]="stewardesses"></app-stewardesses-list>
 </div>
+<!-- <div class="col-md-7">
+    <app-stewardesses-list [stewardesses]="stewardesses"></app-stewardesses-list>
+</div> -->

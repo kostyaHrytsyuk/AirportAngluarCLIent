@@ -20,11 +20,48 @@ export class HomeComponent implements OnInit {
     
     planeTypeService.getAll().subscribe((data: any) => this.planeTypes = data);
     stewardessesService.getAll().subscribe((data : any ) => this.stewardesses = data);
-    // this.currentPlaneType = this.
+    this.currentPlaneType = this.setDefaultValuesForPlaneType();
   }
 
   ngOnInit() {
   }
+  
+  public createClicked = function(item){
+    debugger;
+    this.currentPlaneType = this.setDefaultValuesForPlaneType();
+  }
+
+  public homeDeleteClicked(item){
+    debugger;
+    const delIndex = _.findIndex(this.planeTypes, {id: item.id});
+    this.planeTypeService.delete(item).subscribe(
+      result => this.planeTypes.splice(delIndex,1)
+    );
+  }
+
+  public updateClicked = function(item){
+    this.currentPlaneType = item;
+  };
+
+
+
+  public createOrUpdatePlaneType = function(planeType: any){
+    let planeTypeWithId;
+    planeTypeWithId = _.find(this.planeTypes, (pt => pt.id === planeType.id));
+    debugger;
+    if (planeTypeWithId) {
+      const updIndex = _.findIndex(this.planeTypes, {id: planeTypeWithId.id});
+      this.planeTypeService.update(planeType).subscribe(
+        planeTypeRecord => this.planeTypes.splice(updIndex, 1 , planeType)
+      );      
+    } else {
+      this.planeTypeService.create(planeType).subscribe(
+        planeTypeRecord => this.planeTypes.push(planeType)
+      );  
+    }
+
+    this.currentPlaneType = this.setDefaultValuesForPlaneType();
+  };
 
   private setDefaultValuesForPlaneType(){
     return{
@@ -33,23 +70,4 @@ export class HomeComponent implements OnInit {
       carrying: 0
     }
   }
-
-  public createOrUpdatePlaneType = function(planeType: any){
-    let planeTypeWithId;
-    planeTypeWithId = _.find(this.planeTypes, (pt => pt.id === planeType.id));
-
-    if (planeType) {
-      const updIndex = _.findIndex(this.planeTypes, {id: planeTypeWithId.id});
-      this.planeTypeService.update(planeType).subscribe(
-        planeTypeRecord => this.planeTypes.splice(updIndex, 1 , planeType)
-      );      
-    } else {
-      this.planeTypeService.add(planeType).subscribe(
-        planeTypeRecord => this.planeTypes.push(planeType)
-      );  
-    }
-
-    this.currentPlaneType = this.setDefaultValuesForPlaneType();
-  };
-
 }
