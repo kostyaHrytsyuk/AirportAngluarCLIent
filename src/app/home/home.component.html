@@ -6,5 +6,9 @@
 </div>
 
 <div class="col-md-7">
+    <app-plane-type-details (planeTypeCreated)="createOrUpdatePlaneType($event)" [planeTypeInfo]="currentPlaneType"></app-plane-type-details>
+</div>
+
+<div class="col-md-7">
     <app-stewardesses-list [stewardesses]="stewardesses"></app-stewardesses-list>
 </div>

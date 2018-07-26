@@ -11,11 +11,11 @@
         <tr *ngFor="let stewardess of stewardesses">
           <td>{{ stewardess?.firstName }}</td>
           <td>{{ stewardess?.lastName }}</td>
-          <td>{{ stewardess?.birthDate }}</td>
+          <td>{{ stewardess?.birthDate | date:'mediumDate' }}</td>
           <td>{{ stewardess?.crewId }}</td>
           <td>
-              <a href="#" (click)="editRecord(this)">Edit</a>
-              <a href="#" (click)="deleteRecord(this)">Delete</a>
+              <a class="btn btn-dark" href="#" (click)="editRecord(this)">Edit</a>
+              <a class="btn btn-dark" href="#" (click)="deleteRecord(this)">Delete</a>
           </td>
         </tr>
     </tbody>

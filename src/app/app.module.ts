@@ -11,6 +11,9 @@ import { PlaneTypeService } from './PlaneType/Service/plane-type.service';
 import { HomeComponent } from './home/home.component';
 import { StewardessesListComponent } from './Stewardess/stewardesses-list/stewardesses-list.component';
 import { StewardessService } from './Stewardess/StewardessService/stewardess.service';
+import { DatePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import * as _ from 'lodash';
 
 // const appRoutes: Routes = [
 //  { path: '/home', component: HomeComponent }
@@ -27,7 +30,8 @@ import { StewardessService } from './Stewardess/StewardessService/stewardess.ser
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule     
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     PlaneTypeService,

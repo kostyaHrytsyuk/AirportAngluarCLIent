@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-plane-type-details',
@@ -6,10 +6,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./plane-type-details.component.css']
 })
 export class PlaneTypeDetailsComponent implements OnInit {
+  @Output() planeTypeCreated = new EventEmitter<any>();
+  @Input() planeTypeInfo: any;
 
-  constructor() { }
+  public btnText = "Create";
+
+  constructor() { 
+    
+  }
 
   ngOnInit() {
   }
 
+  private clearForm = function() {
+    this.planeTypeInfo = {
+      planeModel : '',
+      seatsNumber: 0,
+      carrying: 0
+    };
+  };
+
+  public createOrUpdatePlaneType = function(event){
+    this.planeTypeCreated.emit(this.planeTypeInfo);
+    this.clearForm();
+  };
 }
