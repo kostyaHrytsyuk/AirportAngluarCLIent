@@ -1,3 +1,4 @@
+<div class="container">
 <table class="table table-bordered table-hover">
     <thead class="thead-dark">
         <tr>
@@ -5,6 +6,7 @@
             <th>Last Name</th>
             <th>Birth Date</th>
             <th>Crew Id</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -13,10 +15,17 @@
           <td>{{ stewardess.lastName }}</td>
           <td>{{ stewardess.birthDate | date:'mediumDate' }}</td>
           <td>{{ stewardess.crewId }}</td>
-          <td>
-            <button class="btn btn-dark" (click)="updateItem(stewardess)">Edit</button>
-            <button class="btn btn-dark" (click)="deleteItem(stewardess)">Delete</button>
+          <td class="d-flex justify-content-around">
+            <a class="btn btn-dark" (click)="updateItem(stewardess)" [routerLink]="['/stewardesses', stewardess.id]">Edit</a>
+            <button class="btn btn-dark" (click)="deleteItem(stewardess)"><i class="fa fa-trash-o"></i></button>
           </td>
         </tr>
     </tbody>
   </table>
+
+    <div>
+        <a class="btn btn-dark" [routerLink]="['/stewardesses/add']">
+            Add Stewardess
+        </a>
+    </div>
+  </div>

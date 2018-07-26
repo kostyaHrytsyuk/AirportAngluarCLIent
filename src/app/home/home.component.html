@@ -1,19 +1,12 @@
-<p>
-  Home works!
-</p>
-<div class="row">
-  <div class="col-md-6">
-    <app-stewardesses-list [stewardesses]="stewardesses" (createItem)="createClicked()" (deleteClick)="deleteClick($event)" (updateClick)="updateClicked($event)"></app-stewardesses-list>
-  </div>
-  <div class="col-md-5">
-    <app-stewardess-details (stewardessCreated)="createOrUpdateStewardess($event)" [stewardessInfo]="currentStewardess"></app-stewardess-details>
-  </div>
-</div>
-
-<!-- <div class="col-md-6">
-  <app-plane-type-list [planeTypes]="planeTypes" (createItem)="createClicked()" (deleteClick)="deleteClick($event)" (updateClick)="updateClicked($event)"></app-plane-type-list>
-</div>
-
-<div class="col-md-5">
-    <app-plane-type-details (planeTypeCreated)="createOrUpdatePlaneType($event)" [planeTypeInfo]="currentPlaneType"></app-plane-type-details>
-</div> -->
+<ul>
+  <li>
+    <a class="btn btn-dark" [routerLink]="['/planeTypes']">
+      Plane Types
+    </a>
+  </li>
+  <li>
+    <a class="btn btn-dark" [routerLink]="['/stewardesses']">
+      Stewardesses
+    </a>
+  </li>
+</ul>

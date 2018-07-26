@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { Observable } from '../../../../node_modules/rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,18 +16,16 @@ export class StewardessService {
   public getAll()
   { 
     var items = this.http.get(this.accessPointUrl, {headers: this.headers});
-    debugger;
     return items;
   }
 
-  public get(id)
+  public get(id):Observable<any>
   {
     return this.http.get(this.accessPointUrl + '/' + id, {headers: this.headers});
   }
 
   public create(stewardess)
   {
-    debugger;
     return this.http.post(this.accessPointUrl, stewardess, {headers: this.headers});
   }
 

@@ -1,5 +1,7 @@
 import { Component, EventEmitter , Input, OnInit , Output } from '@angular/core';
 import { Stewardess } from "../stewardess"
+import { StewardessService } from '../Service/stewardess.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-stewardesses-list',
@@ -7,27 +9,42 @@ import { Stewardess } from "../stewardess"
   styleUrls: ['./stewardesses-list.component.css']
 })
 export class StewardessesListComponent implements OnInit {
-  @Input() stewardesses: Array<any>;
   @Output() createClick = new EventEmitter<any>();
   @Output() deleteClick = new EventEmitter<any>();
   @Output() updateClick = new EventEmitter<any>();
 
-  constructor() { }
+  public stewardesses: Array<any>;
+  public currentStewardess: any;
 
-  public createItem(){
-    this.createClick.emit();
-    }
+  constructor(private stewardessesService: StewardessService) {
+    
+   }
+
+   ngOnInit() {
+    this.stewardessesService.getAll().subscribe((data : any ) => this.stewardesses = data);
+  }
+
+  // public createItem(){
+  //   this.createClick.emit();
+  //   }
+
+  //   public createClicked = function(item){
+  //     this.currentStewardess = this.setDefaultValuesForStewardess();
+  //   }
 
   public deleteItem(item){
-    this.deleteClick.emit(item);
+    const delIndex = _.findIndex(this.stewardesses, {id: item.id});
+    this.stewardessesService.delete(item.id).subscribe(
+      result => this.stewardesses.splice(delIndex,1)
+    );
   }
 
-  public updateItem(item){
-    const cloneItem = Object.assign({}, item);
-    this.updateClick.emit(cloneItem);
-  }
+  // public updateItem = function(item){
+  //   this.currentStewardess = item;
+  // };
+  
 
-  ngOnInit() {
-  }
+
+  
 
 }

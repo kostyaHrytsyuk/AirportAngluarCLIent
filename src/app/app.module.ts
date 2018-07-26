@@ -15,6 +15,7 @@ import { DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import * as _ from 'lodash';
 import { StewardessDetailsComponent } from './Stewardess/stewardess-details/stewardess-details.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // const appRoutes: Routes = [
 //  { path: '/home', component: HomeComponent }
@@ -33,7 +34,8 @@ import { StewardessDetailsComponent } from './Stewardess/stewardess-details/stew
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    AngularFontAwesomeModule
   ],
   providers: [
     PlaneTypeService,

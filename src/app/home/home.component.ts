@@ -10,65 +10,27 @@ import * as _ from 'lodash';
 })
 export class HomeComponent implements OnInit {
   public planeTypes: Array<any>;
-  public stewardesses: Array<any>;
-  public currentStewardess: any;
+  
   public currentPlaneType: any;
 
 
   constructor(
     private planeTypeService: PlaneTypeService
-  , private stewardessesService: StewardessService ) {
+    ) {
     
     //planeTypeService.getAll().subscribe((data: any) => this.planeTypes = data);
     // this.currentPlaneType = this.setDefaultValuesForPlaneType();
 
-    stewardessesService.getAll().subscribe((data : any ) => this.stewardesses = data);
-    this.currentStewardess = this.setDefaultValuesForStewardess();
+    
   }
 
   ngOnInit() {}
   
-  public createClicked = function(item){
-    this.currentStewardess = this.setDefaultValuesForStewardess();
-  }
+  
 
-  public deleteClick(item){
-    const delIndex = _.findIndex(this.stewardesses, {id: item.id});
-    this.stewardessesService.delete(item.id).subscribe(
-      result => this.stewardesses.splice(delIndex,1)
-    );
-  }
+  
 
-  public updateClicked = function(item){
-    this.currentStewardess = item;
-  };
-
-  public createOrUpdateStewardess = function(stewardess: any){
-    let stewardessWithId;
-    stewardessWithId = _.find(this.stewardesses, ( s => s.id === stewardess.id));
-    debugger;
-    if (stewardessWithId) {
-      const updIndex = _.findIndex(this.planeTypes, {id: stewardessWithId.id});
-      this.stewardessesService.update(stewardess).subscribe(
-        stewardessRecord => this.stewardesses.splice(updIndex, 1 , stewardess)
-      );      
-    } else {
-      this.stewardessesService.create(stewardess).subscribe(
-        stewardessRecord => this.stewardesses.push(stewardess)
-      );  
-    }
-
-    this.currentStewardess = this.setDefaultValuesForStewardess();
-  };
-
-  private setDefaultValuesForStewardess(){
-    return{
-      firstName : '',
-      lastName: '',
-      birthDate: '',
-      crewId: 0
-    }
-  }
+  
 
   //#region Plane Type
   // public createClicked = function(item){
