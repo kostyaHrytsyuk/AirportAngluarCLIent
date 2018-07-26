@@ -25,6 +25,7 @@ export class PlaneTypeListComponent implements OnInit {
   }
 
   public updateItem(item){
+    debugger;
     const cloneItem = Object.assign({}, item);
     this.updateClick.emit(cloneItem);
   }

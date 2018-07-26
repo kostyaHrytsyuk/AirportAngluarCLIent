@@ -27,12 +27,10 @@ export class HomeComponent implements OnInit {
   }
   
   public createClicked = function(item){
-    debugger;
     this.currentPlaneType = this.setDefaultValuesForPlaneType();
   }
 
   public deleteClick(item){
-    debugger;
     const delIndex = _.findIndex(this.planeTypes, {id: item.id});
     this.planeTypeService.delete(item.id).subscribe(
       result => this.planeTypes.splice(delIndex,1)

@@ -30,12 +30,11 @@ export class PlaneTypeService {
 
   public update(planeType)
   {
-    return this.http.put(this.accessPointUrl + '/' + planeType, {headers: this.headers});
+    return this.http.put(this.accessPointUrl + '/' + planeType.id, planeType, {headers: this.headers});
   }
 
   public delete(id)
   {
-    debugger;
     var link = this.http.delete(this.accessPointUrl + '/' + id, {headers: this.headers});
     return link;
   }
