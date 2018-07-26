@@ -15,17 +15,14 @@ export class PlaneTypeListComponent implements OnInit {
   constructor() { }
 
   public createItem(){
-    debugger;
     this.createClick.emit();
     }
 
   public deleteItem(item){
-    debugger;
     this.deleteClick.emit(item);
   }
 
   public updateItem(item){
-    debugger;
     const cloneItem = Object.assign({}, item);
     this.updateClick.emit(cloneItem);
   }

@@ -27,7 +27,6 @@ export class PlaneTypeDetailsComponent implements OnInit {
   };
 
   public createOrUpdatePlaneType = function(event){
-    debugger;
     this.planeTypeCreated.emit(this.planeTypeInfo);
     this.clearForm();
   };

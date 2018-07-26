@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
   public createOrUpdatePlaneType = function(planeType: any){
     let planeTypeWithId;
     planeTypeWithId = _.find(this.planeTypes, (pt => pt.id === planeType.id));
-    debugger;
+  
     if (planeTypeWithId) {
       const updIndex = _.findIndex(this.planeTypes, {id: planeTypeWithId.id});
       this.planeTypeService.update(planeType).subscribe(
