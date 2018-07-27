@@ -1,0 +1,35 @@
+<div class="container">
+  <table class="table table-bordered table-hover">
+      <thead class="thead-dark">
+          <tr>
+              <th>Departure Time</th>
+              <th>Flight Number</th>
+              <th>Flight Id</th>
+              <th>Crew Id</th>
+              <th>Plane Id</th>
+              <th>Actions</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let departure of departures">
+          <td>{{ departure.departureDate | date: 'MM-dd-yyyy HH-mm' }}</td>
+          <td>{{ departure.flightNumber }}</td>
+          <td>{{ departure.flightId }}</td>
+          <td>{{ departure.crewId }}</td>
+          <td>{{ departure.planeId }}</td>
+          <td class="d-flex justify-content-around">
+              <button class="btn btn-dark" (click)="updateItem(departure)" [routerLink]="['/departures', departure.id]">Edit</button>
+              <button class="btn btn-dark" (click)="deleteItem(departure)"><i class="fa fa-trash-o"></i></button>
+          </td>
+          </tr>
+      </tbody>
+  </table>
+  <div class="d-flex justify-content-around">
+      <button class="btn btn-dark" [routerLink]="['/home']">
+              Back
+      </button>
+      <button class="btn btn-dark" [routerLink]="['/departures/add']">
+          Add Departure
+      </button>
+  </div>
+</div>

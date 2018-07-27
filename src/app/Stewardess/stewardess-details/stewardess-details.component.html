@@ -1,0 +1,27 @@
+<div class="container">
+    <h2 *ngIf="stewardessInfo.id === 0">Add Stewardess</h2>
+    <h2 *ngIf="stewardessInfo.id !== 0">Update Stewardess</h2>
+    <form>
+        <div class="form-group">
+            <label for="firstName-input">First Name:</label>
+            <input type="string" id="firstName-input" name="firstName-input" [(ngModel)]="stewardessInfo.firstName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="lastName-input">Last Name:</label>
+            <input type="string" id="lastName-input" name="lastName-input" [(ngModel)]="stewardessInfo.lastName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="birthDate-input">Birth Date:</label>
+            <input type="date" placeholder="MM-dd-yyyy" id="birthDate-input" name="birthDate-input" [(ngModel)]="stewardessInfo.birthDate" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="crewId-input">Crew Id</label>
+            <input type="number" id="crewId-input" name="crewId-input" [(ngModel)]="stewardessInfo.crewId" class="form-control" />
+        </div>
+        <div class="d-flex justify-content-around">
+            <button class="btn btn-dark" [routerLink]="['/stewardesses']">Back</button>
+            <button class="btn btn-primary" type="button" *ngIf="stewardessInfo.id === 0" (click)="createOrUpdateStewardess()">Add Stewardess</button>
+            <button class="btn btn-primary" type="button" *ngIf="stewardessInfo.id !== 0" (click)="createOrUpdateStewardess()">Update Stewardess</button>
+        </div>
+    </form>
+ </div>

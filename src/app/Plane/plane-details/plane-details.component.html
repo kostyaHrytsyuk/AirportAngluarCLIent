@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 *ngIf="planeInfo.id === 0">Add Plane</h2>
+    <h2 *ngIf="planeInfo.id !== 0">Update Plane</h2>
+    <form>
+        <div class="form-group">
+            <label for="planeName-input">Plane Name:</label>
+            <input type="string" id="planeName-input" name="planeName-input" [(ngModel)]="planeInfo.name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="planeTypeId-input">Plane Type Id:</label>
+            <input type="number" id="planeTypeId-input" name="planeTypeId-input" [(ngModel)]="planeInfo.planeTypeId" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="releaseDate-input">Release Date</label>
+            <input type="date" id="releaseDate-input" name="releaseDate-input" [(ngModel)]="planeInfo.releaseDate" class="form-control" />
+        </div>
+        <div class="d-flex justify-content-around">
+            <button class="btn btn-dark" [routerLink]="['/planes']">Back</button>
+            <button class="btn btn-primary" type="button" *ngIf="planeInfo.id === 0" (click)="createOrUpdatePlane()">Add Plane</button>
+            <button class="btn btn-primary" type="button" *ngIf="planeInfo.id !== 0" (click)="createOrUpdatePlane()">Update Plane</button>
+        </div>
+    </form>
+ </div>
