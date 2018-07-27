@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from '../../../../node_modules/rxjs';
-import { PlaneType } from '../PlaneType'
+import { Observable } from 'rxjs';
+import { PlaneType } from '../../app/PlaneType/PlaneType'
 
 @Injectable({
   providedIn: 'root'

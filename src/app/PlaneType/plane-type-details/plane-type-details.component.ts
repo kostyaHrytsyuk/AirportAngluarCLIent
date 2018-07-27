@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PlaneType } from '../planeType';
-import { PlaneTypeService } from '../Service/plane-type.service';
+import { PlaneTypeService } from 'src/shared/PlaneType/plane-type.service';
 
 @Component({
   selector: 'app-plane-type-details',
