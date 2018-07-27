@@ -10,7 +10,7 @@
         </thead>
         <tbody>
             <tr *ngFor="let ticket of tickets">
-            <td>{{ ticket.price}}</td>
+            <td>{{ ticket.price | number:'1.1-2'}}</td>
             <td>{{ ticket.flightNumber}}</td>
             <td>{{ ticket.flightId}}</td>
             <td class="d-flex justify-content-around">
