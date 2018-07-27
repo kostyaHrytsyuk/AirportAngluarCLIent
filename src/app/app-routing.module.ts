@@ -7,6 +7,8 @@ import { PlaneTypeListComponent } from './PlaneType/plane-type-list/plane-type-l
 import { PlaneTypeDetailsComponent } from './PlaneType/plane-type-details/plane-type-details.component'
 import { StewardessesListComponent } from './Stewardess/stewardesses-list/stewardesses-list.component';
 import { StewardessDetailsComponent } from './Stewardess/stewardess-details/stewardess-details.component';
+import { PlaneListComponent } from './Plane/plane-list/plane-list.component';
+import { PlaneDetailsComponent } from './Plane/plane-details/plane-details.component';
 
 const routes: Routes = [
     {
@@ -41,6 +43,17 @@ const routes: Routes = [
     {
         path: 'stewardesses/add',
         component: StewardessDetailsComponent
+    },
+    {
+        path: 'planes',
+        component: PlaneListComponent    },
+    {
+        path: 'planes/:id',
+        component: PlaneDetailsComponent
+    },
+    {
+        path: 'planes/add',
+        component: PlaneDetailsComponent
     }
 ];
 
