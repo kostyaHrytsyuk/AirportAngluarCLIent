@@ -17,6 +17,8 @@ import { TicketListComponent } from './Ticket/ticket-list/ticket-list.component'
 import { TicketDetailsComponent } from './Ticket/ticket-details/ticket-details.component';
 import { FlightListComponent } from './Flight/flight-list/flight-list.component';
 import { FlightDetailsComponent } from './Flight/flight-details/flight-details.component';
+import { DepartureListComponent } from './Departure/departure-list/departure-list.component';
+import { DepartureDetailsComponent } from './Departure/departure-details/departure-details.component';
 
 const routes: Routes = [
     {
@@ -111,6 +113,18 @@ const routes: Routes = [
     {
         path: 'flights/add',
         component: FlightDetailsComponent
+    },
+    {
+        path: 'departures',
+        component: DepartureListComponent    
+    },
+    {
+        path: 'departures/:id',
+        component: DepartureDetailsComponent
+    },
+    {
+        path: 'departures/add',
+        component: DepartureDetailsComponent
     }
 ];
 
