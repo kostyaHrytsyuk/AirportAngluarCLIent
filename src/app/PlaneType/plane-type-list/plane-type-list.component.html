@@ -5,6 +5,7 @@
             <th>Plane Model</th>
             <th>Seats Number</th>
             <th>Carrying</th>
+            <th>Actions</th>
         </tr>
     </thead>
     <tbody>
@@ -13,7 +14,7 @@
             <td>{{ planeType?.seatsNumber | number }}</td>
             <td>{{ planeType?.carrying }}</td>
             <td class="d-flex justify-content-around">
-                <a class="btn btn-dark" (click)="updateItem(planeType)" [routerLink="['/planeTypes', planeType.id]"]>Edit</a>
+                <a class="btn btn-dark" (click)="updateItem(planeType)" [routerLink]="['/planeTypes', planeType.id]">Edit</a>
                 <a class="btn btn-dark" (click)="deleteItem(planeType)"><i class="fa fa-trash-o"></i></a>
             </td>
         </tr>
