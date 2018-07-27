@@ -5,14 +5,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
-import { SharedModule } from 'src/shared/shared.module';
+import { SharedModule } from '../shared/shared.module';
 //#endregion
 //#region Airport Imports
 import { HomeComponent } from './home/home.component';
 
 import { PlaneListComponent } from './Plane/plane-list/plane-list.component';
 import { PlaneDetailsComponent } from './Plane/plane-details/plane-details.component';
-import { PlaneService } from './Plane/Service/plane.service';
 
 import { PlaneTypeListComponent } from './PlaneType/plane-type-list/plane-type-list.component';
 import { PlaneTypeDetailsComponent } from './PlaneType/plane-type-details/plane-type-details.component';
@@ -72,7 +71,6 @@ import { DepartureService } from './Departure/Service/departure.service';
   ],
   providers: [
     StewardessService,
-    PlaneService,
     PilotService,
     CrewService,
     TicketService,

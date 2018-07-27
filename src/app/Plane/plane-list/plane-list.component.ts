@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 import { Plane } from '../plane';
-import { PlaneService } from '../Service/plane.service';
+import { PlaneService } from '../../../shared/Plane/plane.service';
 
 @Component({
   selector: 'app-plane-list',
