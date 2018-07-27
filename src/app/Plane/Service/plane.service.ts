@@ -16,7 +16,6 @@ export class PlaneService {
 
   public getAll()
   { 
-    debugger;
     var items = this.http.get(this.accessPointUrl, {headers: this.headers});
     return items;
   }

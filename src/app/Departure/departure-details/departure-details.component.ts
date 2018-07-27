@@ -35,7 +35,6 @@ export class DepartureDetailsComponent implements OnInit {
   }
 
   public createOrUpdateDeparture(){
-    debugger;
     if (this.departureInfo.id !== 0) {
       this.departureService.update(this.departureInfo).subscribe((resp) => {        
         if(resp){
