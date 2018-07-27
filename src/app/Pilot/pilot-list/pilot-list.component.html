@@ -1,0 +1,35 @@
+<div class="container">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Birth Date</th>
+                <th>Experience</th>
+                <th>Crew Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pilot of pilots">
+            <td>{{ pilot.firstName }}</td>
+            <td>{{ pilot.lastName}}</td>
+            <td>{{ pilot.birthDate | date:'mediumDate' }}</td>
+            <td>{{ pilot.exp}}</td>
+            <td>{{ pilot.crewId}}</td>
+            <td class="d-flex justify-content-around">
+                <button class="btn btn-dark" (click)="updateItem(pilot)" [routerLink]="['/pilots', pilot.id]">Edit</button>
+                <button class="btn btn-dark" (click)="deleteItem(pilot)"><i class="fa fa-trash-o"></i></button>
+            </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-around">
+        <button class="btn btn-dark" [routerLink]="['/home']">
+                Back
+        </button>
+        <button class="btn btn-dark" [routerLink]="['/pilots/add']">
+            Add Pilot
+        </button>
+    </div>
+  </div>

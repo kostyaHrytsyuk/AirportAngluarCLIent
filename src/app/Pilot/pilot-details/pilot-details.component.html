@@ -1,0 +1,31 @@
+<div class="container">
+    <h2 *ngIf="pilotInfo.id === 0">Add Pilot</h2>
+    <h2 *ngIf="pilotInfo.id !== 0">Update Pilot</h2>
+    <form>
+        <div class="form-group">
+            <label for="pilotFirstName-input">First Name:</label>
+            <input type="string" id="pilotFirstName-input" name="pilotFirstName-input" [(ngModel)]="pilotInfo.firstName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="pilotLastName-input">Last Name:</label>
+            <input type="string" id="pilotLastName-input" name="pilotLastName-input" [(ngModel)]="pilotInfo.lastName" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="experience-input">Experience:</label>
+            <input type="number" id="experience-input" name="experience-input" [(ngModel)]="pilotInfo.exp" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="birthDate-input">Birth Date</label>
+            <input type="date" id="birthDate-input" name="birthDate-input" [(ngModel)]="pilotInfo.birthDate" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="crewId-input">Crew Id:</label>
+            <input type="number" id="crewId-input" name="crewId-input" [(ngModel)]="pilotInfo.crewId" class="form-control" />
+        </div>
+        <div class="d-flex justify-content-around">
+            <button class="btn btn-dark" [routerLink]="['/pilots']">Back</button>
+            <button class="btn btn-primary" type="button" *ngIf="pilotInfo.id === 0" (click)="createOrUpdatePilot()">Add pilot</button>
+            <button class="btn btn-primary" type="button" *ngIf="pilotInfo.id !== 0" (click)="createOrUpdatePilot()">Update pilot</button>
+        </div>
+    </form>
+ </div>

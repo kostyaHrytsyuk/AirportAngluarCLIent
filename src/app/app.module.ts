@@ -20,22 +20,24 @@ import { PlaneTypeService } from './PlaneType/Service/plane-type.service';
 import { StewardessesListComponent } from './Stewardess/stewardesses-list/stewardesses-list.component';
 import { StewardessDetailsComponent } from './Stewardess/stewardess-details/stewardess-details.component';
 import { StewardessService } from './Stewardess/Service/stewardess.service';
-//#endregion
 
-// const appRoutes: Routes = [
-//  { path: '/home', component: HomeComponent }
-// ];
+import { PilotListComponent } from './Pilot/pilot-list/pilot-list.component';
+import { PilotDetailsComponent } from './Pilot/pilot-details/pilot-details.component';
+import { PilotService } from './Pilot/Service/pilot.service';
+//#endregion
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     PlaneTypeListComponent,
     PlaneTypeDetailsComponent,
-    HomeComponent,
     StewardessesListComponent,
     StewardessDetailsComponent,
     PlaneListComponent,
-    PlaneDetailsComponent
+    PlaneDetailsComponent,
+    PilotListComponent,
+    PilotDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +48,8 @@ import { StewardessService } from './Stewardess/Service/stewardess.service';
   providers: [
     PlaneTypeService,
     StewardessService,
-    PlaneService
+    PlaneService,
+    PilotService
   ],
   bootstrap: [AppComponent]
 })
