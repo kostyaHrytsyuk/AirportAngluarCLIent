@@ -15,7 +15,7 @@
             <td>{{ ticket.flightId}}</td>
             <td class="d-flex justify-content-around">
                 <button class="btn btn-dark" (click)="updateItem(ticket)" [routerLink]="['/tickets', ticket.id]">Edit</button>
-                <button class="btn btn-dark" (click)="deleteItem(ticket)"><i class="fa fa-trash-o"></i></button>
+                <button class="btn btn-dark" (click)="deleteItem(ticket)"><i class="far fa-trash-alt"></i></button>
             </td>
             </tr>
         </tbody>
