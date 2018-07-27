@@ -32,6 +32,10 @@ import { CrewService } from './Crew/Service/crew.service';
 import { TicketListComponent } from './Ticket/ticket-list/ticket-list.component';
 import { TicketDetailsComponent } from './Ticket/ticket-details/ticket-details.component';
 import { TicketService } from './Ticket/Service/ticket.service';
+
+import { FlightListComponent } from './Flight/flight-list/flight-list.component';
+import { FlightDetailsComponent } from './Flight/flight-details/flight-details.component';
+import { FlightService } from './Flight/Service/flight.service';
 //#endregion
 
 @NgModule({
@@ -49,7 +53,9 @@ import { TicketService } from './Ticket/Service/ticket.service';
     CrewListComponent,
     CrewDetailsComponent,
     TicketListComponent,
-    TicketDetailsComponent
+    TicketDetailsComponent,
+    FlightListComponent,
+    FlightDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +69,8 @@ import { TicketService } from './Ticket/Service/ticket.service';
     PlaneService,
     PilotService,
     CrewService,
-    TicketService
+    TicketService,
+    FlightService
   ],
   bootstrap: [AppComponent]
 })
