@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
+html,body{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+body{
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif !important;
+    font-weight: 400;
+    
+}
+
+.list-table
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

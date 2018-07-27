@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container list-table">
   <table class="table table-bordered table-hover">
       <thead class="thead-dark">
           <tr>
@@ -12,7 +12,7 @@
       </thead>
       <tbody>
           <tr *ngFor="let departure of departures">
-          <td>{{ departure.departureDate | date: 'MM-dd-yyyy HH-mm' }}</td>
+          <td>{{ departure.departureDate }}</td>
           <td>{{ departure.flightNumber }}</td>
           <td>{{ departure.flightId }}</td>
           <td>{{ departure.crewId }}</td>
