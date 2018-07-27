@@ -13,6 +13,8 @@ import { PilotListComponent } from './Pilot/pilot-list/pilot-list.component';
 import { PilotDetailsComponent } from './Pilot/pilot-details/pilot-details.component';
 import { CrewListComponent } from './Crew/crew-list/crew-list.component';
 import { CrewDetailsComponent } from './Crew/crew-details/crew-details.component';
+import { TicketListComponent } from './Ticket/ticket-list/ticket-list.component';
+import { TicketDetailsComponent } from './Ticket/ticket-details/ticket-details.component';
 
 const routes: Routes = [
     {
@@ -83,6 +85,18 @@ const routes: Routes = [
     {
         path: 'crews/add',
         component: CrewDetailsComponent
+    },
+    {
+        path: 'tickets',
+        component: TicketListComponent    
+    },
+    {
+        path: 'tickets/:id',
+        component: TicketDetailsComponent
+    },
+    {
+        path: 'tickets/add',
+        component: TicketDetailsComponent
     }
 ];
 

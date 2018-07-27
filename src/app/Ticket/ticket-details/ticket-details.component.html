@@ -1,0 +1,23 @@
+<div class="container">
+    <h2 *ngIf="ticketInfo.id === 0">Add Ticket</h2>
+    <h2 *ngIf="ticketInfo.id !== 0">Update Ticket</h2>
+    <form>
+        <div class="form-group">
+            <label for="price-input">Price:</label>
+            <input type="number" id="price-input" name="price-input" [(ngModel)]="ticketInfo.price" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="flightNumber-input">Flight Number:</label>
+            <input type="string" id="flightNumber-input" name="flightNumber-input" [(ngModel)]="ticketInfo.flightNumber" class="form-control"/>
+        </div>
+        <div class="form-group">
+            <label for="flightId-input">Flight Id:</label>
+            <input type="number" id="flightId-input" name="flightId-input" [(ngModel)]="ticketInfo.flightId" class="form-control"/>
+        </div>
+        <div class="d-flex justify-content-around">
+            <button class="btn btn-dark" [routerLink]="['/tickets']">Back</button>
+            <button class="btn btn-primary" type="button" *ngIf="ticketInfo.id === 0" (click)="createOrUpdateTicket()">Add Ticket</button>
+            <button class="btn btn-primary" type="button" *ngIf="ticketInfo.id !== 0" (click)="createOrUpdateTicket()">Update Ticket</button>
+        </div>
+    </form>
+ </div>

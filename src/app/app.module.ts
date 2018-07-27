@@ -28,6 +28,10 @@ import { PilotService } from './Pilot/Service/pilot.service';
 import { CrewListComponent } from './Crew/crew-list/crew-list.component';
 import { CrewDetailsComponent } from './Crew/crew-details/crew-details.component';
 import { CrewService } from './Crew/Service/crew.service';
+
+import { TicketListComponent } from './Ticket/ticket-list/ticket-list.component';
+import { TicketDetailsComponent } from './Ticket/ticket-details/ticket-details.component';
+import { TicketService } from './Ticket/Service/ticket.service';
 //#endregion
 
 @NgModule({
@@ -43,7 +47,9 @@ import { CrewService } from './Crew/Service/crew.service';
     PilotListComponent,
     PilotDetailsComponent,
     CrewListComponent,
-    CrewDetailsComponent
+    CrewDetailsComponent,
+    TicketListComponent,
+    TicketDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +62,8 @@ import { CrewService } from './Crew/Service/crew.service';
     StewardessService,
     PlaneService,
     PilotService,
-    CrewService
+    CrewService,
+    TicketService
   ],
   bootstrap: [AppComponent]
 })
