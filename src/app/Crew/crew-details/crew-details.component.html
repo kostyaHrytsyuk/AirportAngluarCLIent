@@ -1,0 +1,19 @@
+<div class="container">
+    <h2 *ngIf="crewInfo.id === 0">Add Crew</h2>
+    <h2 *ngIf="crewInfo.id !== 0">Update Crew</h2>
+    <form>
+        <div class="form-group">
+            <label for="crewId-input">Crew Id:</label>
+            <input type="number" id="crewId-input" name="crewId-input" [(ngModel)]="crewInfo.crewId" class="form-control" disabled />
+        </div>
+        <div class="form-group">
+            <label for="pilotId-input">Pilot Id:</label>
+            <input type="number" id="pilotId-input" name="pilotId-input" [(ngModel)]="crewInfo.pilotId" class="form-control" />
+        </div>
+        <div class="d-flex justify-content-around">
+            <button class="btn btn-dark" [routerLink]="['/crews']">Back</button>
+            <button class="btn btn-primary" type="button" *ngIf="crewInfo.id === 0" (click)="createOrUpdateCrew()">Add Crew</button>
+            <button class="btn btn-primary" type="button" *ngIf="crewInfo.id !== 0" (click)="createOrUpdateCrew()">Update Crew</button>
+        </div>
+    </form>
+ </div>

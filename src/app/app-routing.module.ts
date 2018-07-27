@@ -11,6 +11,8 @@ import { PlaneListComponent } from './Plane/plane-list/plane-list.component';
 import { PlaneDetailsComponent } from './Plane/plane-details/plane-details.component';
 import { PilotListComponent } from './Pilot/pilot-list/pilot-list.component';
 import { PilotDetailsComponent } from './Pilot/pilot-details/pilot-details.component';
+import { CrewListComponent } from './Crew/crew-list/crew-list.component';
+import { CrewDetailsComponent } from './Crew/crew-details/crew-details.component';
 
 const routes: Routes = [
     {
@@ -69,6 +71,18 @@ const routes: Routes = [
     {
         path: 'pilots/add',
         component: PilotDetailsComponent
+    },
+    {
+        path: 'crews',
+        component: CrewListComponent    
+    },
+    {
+        path: 'crews/:id',
+        component: CrewDetailsComponent
+    },
+    {
+        path: 'crews/add',
+        component: CrewDetailsComponent
     }
 ];
 
