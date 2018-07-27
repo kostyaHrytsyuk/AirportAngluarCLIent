@@ -14,13 +14,16 @@
             <td>{{ planeType?.seatsNumber | number }}</td>
             <td>{{ planeType?.carrying }}</td>
             <td class="d-flex justify-content-around">
-                <a class="btn btn-dark" (click)="updateItem(planeType)" [routerLink]="['/planeTypes', planeType.id]">Edit</a>
-                <a class="btn btn-dark" (click)="deleteItem(planeType)"><i class="fa fa-trash-o"></i></a>
+                <button class="btn btn-dark" (click)="updateItem(planeType)" [routerLink]="['/planeTypes', planeType.id]">Edit</button>
+                <button class="btn btn-dark" (click)="deleteItem(planeType)"><i class="fa fa-trash-o"></i></button>
             </td>
         </tr>
     </tbody>
     </table>
-    <div>
+    <div class="d-flex justify-content-around">
+        <button class="btn btn-dark" [routerLink]="['/home']">
+                Back
+        </button>
         <a class="btn btn-dark" [routerLink]="['/planeTypes/add']">
             Add Stewardess
         </a>
