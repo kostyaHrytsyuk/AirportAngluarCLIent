@@ -18,7 +18,6 @@ import { PlaneTypeDetailsComponent } from './PlaneType/plane-type-details/plane-
 
 import { StewardessesListComponent } from './Stewardess/stewardesses-list/stewardesses-list.component';
 import { StewardessDetailsComponent } from './Stewardess/stewardess-details/stewardess-details.component';
-import { StewardessService } from './Stewardess/Service/stewardess.service';
 
 import { PilotListComponent } from './Pilot/pilot-list/pilot-list.component';
 import { PilotDetailsComponent } from './Pilot/pilot-details/pilot-details.component';
@@ -70,7 +69,6 @@ import { DepartureService } from './Departure/Service/departure.service';
     SharedModule.forRoot()
   ],
   providers: [
-    StewardessService,
     PilotService,
     CrewService,
     TicketService,

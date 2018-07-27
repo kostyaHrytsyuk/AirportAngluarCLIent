@@ -2,6 +2,7 @@ import { NgModule, ModuleWithProviders } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PlaneTypeService } from './PlaneType/plane-type.service';
 import { PlaneService } from './Plane/plane.service';
+import { StewardessService } from './Stewardess/stewardess.service';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ export class SharedModule {
       ngModule: SharedModule,
       providers: [ 
         PlaneTypeService,
-        PlaneService
+        PlaneService,
+        StewardessService
       ]
     }
   }

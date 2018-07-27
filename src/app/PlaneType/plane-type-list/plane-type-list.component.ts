@@ -1,6 +1,6 @@
 import { Component, EventEmitter , Input, OnInit , Output } from '@angular/core';
 import { PlaneType } from '../planeType';
-import { PlaneTypeService } from 'src/shared/PlaneType/plane-type.service';
+import { PlaneTypeService } from '../../../shared/PlaneType/plane-type.service';
 import * as _ from 'lodash';
 
 @Component({

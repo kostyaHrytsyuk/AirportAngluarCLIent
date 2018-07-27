@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Stewardess } from "../stewardess"
-import { StewardessService } from '../Service/stewardess.service';
+import { StewardessService } from '../../../shared/Stewardess/stewardess.service';
 import * as _ from 'lodash';
 
 @Component({
