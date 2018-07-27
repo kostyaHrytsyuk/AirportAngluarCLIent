@@ -1,22 +1,27 @@
-
-<!-- {{planeTypes | json}} -->
-<table class="table table-bordered table-hover">
-  <thead class="thead-dark">
-      <tr>
-          <th>Plane Model</th>
-          <th>Seats Number</th>
-          <th>Carrying</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr *ngFor="let planeType of planeTypes">
-        <td>{{ planeType?.planeModel }}</td>
-        <td>{{ planeType?.seatsNumber | number }}</td>
-        <td>{{ planeType?.carrying }}</td>
-        <td>
-            <button class="btn btn-dark" (click)="updateItem(planeType)">Edit</button>
-            <button class="btn btn-dark" (click)="deleteItem(planeType)">Delete</button>
-        </td>
-      </tr>
-  </tbody>
-</table>
+<div class="container">
+    <table class="table table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>Plane Model</th>
+            <th>Seats Number</th>
+            <th>Carrying</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let planeType of planeTypes">
+            <td>{{ planeType?.planeModel }}</td>
+            <td>{{ planeType?.seatsNumber | number }}</td>
+            <td>{{ planeType?.carrying }}</td>
+            <td class="d-flex justify-content-around">
+                <a class="btn btn-dark" (click)="updateItem(planeType)" [routerLink="['/planeTypes', planeType.id]"]>Edit</a>
+                <a class="btn btn-dark" (click)="deleteItem(planeType)"><i class="fa fa-trash-o"></i></a>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+    <div>
+        <a class="btn btn-dark" [routerLink]="['/planeTypes/add']">
+            Add Stewardess
+        </a>
+    </div>
+</div>

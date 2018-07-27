@@ -1,4 +1,7 @@
 import { Component, EventEmitter , Input, OnInit , Output } from '@angular/core';
+import { PlaneType } from '../planeType';
+import { PlaneTypeService } from '../Service/plane-type.service';
+import * as _ from 'lodash';
 
 @Component({
   selector: 'app-plane-type-list',
@@ -6,28 +9,19 @@ import { Component, EventEmitter , Input, OnInit , Output } from '@angular/core'
   styleUrls: ['./plane-type-list.component.css']
 })
 export class PlaneTypeListComponent implements OnInit {
-  @Input() planeTypes: Array<any>;
-  @Output() createClick = new EventEmitter<any>();
-  @Output() deleteClick = new EventEmitter<any>();
-  @Output() updateClick = new EventEmitter<any>();
-  
+  public planeTypes: Array<PlaneType>;
+  public currentPlaneType: PlaneType;
 
-  constructor() { }
-
-  public createItem(){
-    this.createClick.emit();
-    }
-
-  public deleteItem(item){
-    this.deleteClick.emit(item);
-  }
-
-  public updateItem(item){
-    const cloneItem = Object.assign({}, item);
-    this.updateClick.emit(cloneItem);
-  }
+  constructor(private planeTypeService: PlaneTypeService) { }
 
   ngOnInit() {
+    this.planeTypeService.getAll().subscribe(( data : PlaneType[]) => this.planeTypes = data)
   }
-
+  
+  public deleteItem(item){
+    const delIndex = _.findIndex(this.planeTypes, {id: item.id});
+    this.planeTypeService.delete(item.id).subscribe(
+      result => this.planeTypes.splice(delIndex,1)
+    );
+  }
 }

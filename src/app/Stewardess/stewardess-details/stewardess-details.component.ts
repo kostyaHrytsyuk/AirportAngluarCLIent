@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { StewardessService } from '../Service/stewardess.service';
-import {  ActivatedRoute, Router } from '@angular/router';
 import { Stewardess } from '../stewardess';
 
 @Component({
@@ -33,13 +33,11 @@ export class StewardessDetailsComponent implements OnInit {
   };
 
   public createOrUpdateStewardess(){
-    debugger;
     if (this.stewardessInfo.id !== 0) {
       this.stewardessesService.update(this.stewardessInfo).subscribe((resp) => {        
         if(resp){
           this.router.navigate(['/stewardesses']);
-        }
-        
+        }        
       });      
     } else {
       this.stewardessesService.create(this.stewardessInfo).subscribe((resp) => {        

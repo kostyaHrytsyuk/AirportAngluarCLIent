@@ -1,4 +1,4 @@
-import { Component, EventEmitter , Input, OnInit , Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Stewardess } from "../stewardess"
 import { StewardessService } from '../Service/stewardess.service';
 import * as _ from 'lodash';
@@ -12,9 +12,7 @@ export class StewardessesListComponent implements OnInit {
   public stewardesses: Array<Stewardess>;
   public currentStewardess: Stewardess;
 
-  constructor(private stewardessesService: StewardessService) {
-    
-   }
+  constructor(private stewardessesService: StewardessService) { }
 
    ngOnInit() {
     this.stewardessesService.getAll().subscribe((data : Stewardess[] ) => this.stewardesses = data);

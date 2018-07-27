@@ -1,4 +1,7 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PlaneType } from '../planeType';
+import { PlaneTypeService } from '../Service/plane-type.service';
 
 @Component({
   selector: 'app-plane-type-details',
@@ -6,16 +9,17 @@ import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
   styleUrls: ['./plane-type-details.component.css']
 })
 export class PlaneTypeDetailsComponent implements OnInit {
-  @Output() planeTypeCreated = new EventEmitter<any>();
-  @Input() planeTypeInfo: any;
+  public planeTypeInfo: PlaneType;
 
-  public btnText = "Create";
-
-  constructor() { 
-    
+  constructor(private planeTypeService: PlaneTypeService, private router: Router, private routerActivate: ActivatedRoute) { 
+    this.planeTypeInfo = new PlaneType();
+    this.clearForm();
   }
 
   ngOnInit() {
+    if(!isNaN(this.routerActivate.snapshot.params.id)){
+      this.planeTypeService.get(this.routerActivate.snapshot.params.id).subscribe((data : PlaneType) => this.planeTypeInfo = data);
+    }
   }
 
   private clearForm = function() {
@@ -26,8 +30,19 @@ export class PlaneTypeDetailsComponent implements OnInit {
     };
   };
 
-  public createOrUpdatePlaneType = function(event){
-    this.planeTypeCreated.emit(this.planeTypeInfo);
-    this.clearForm();
+  public createOrUpdatePlaneType(){
+    if (this.planeTypeInfo.id !== 0) {
+      this.planeTypeService.update(this.planeTypeInfo).subscribe((resp) => {
+        if(resp){
+          this.router.navigate(['/planeTypes']);
+        }
+      });      
+    } else {
+      this.planeTypeService.create(this.planeTypeInfo).subscribe((resp) => {
+        if(resp){
+          this.router.navigate(['/planeTypes']);
+        }
+      });    
+    }
   };
 }
