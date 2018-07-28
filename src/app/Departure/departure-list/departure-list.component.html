@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container list-table">
   <table class="table table-bordered table-hover">
       <thead class="thead-dark">
           <tr>
@@ -12,14 +12,14 @@
       </thead>
       <tbody>
           <tr *ngFor="let departure of departures">
-          <td>{{ departure.departureDate | date: 'MM-dd-yyyy HH-mm' }}</td>
+          <td>{{ departure.departureDate }}</td>
           <td>{{ departure.flightNumber }}</td>
           <td>{{ departure.flightId }}</td>
           <td>{{ departure.crewId }}</td>
           <td>{{ departure.planeId }}</td>
           <td class="d-flex justify-content-around">
               <button class="btn btn-dark" (click)="updateItem(departure)" [routerLink]="['/departures', departure.id]">Edit</button>
-              <button class="btn btn-dark" (click)="deleteItem(departure)"><i class="fa fa-trash-o"></i></button>
+              <button class="btn btn-dark" (click)="deleteItem(departure)"><i class="far fa-trash-alt"></i></button>
           </td>
           </tr>
       </tbody>

@@ -7,11 +7,37 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,800&subset=cyrillic,cyrillic-ext" type="text/css">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css"  href="assets/css/base.css"/>
+  <link rel="stylesheet" type="text/css"  href="assets/css/body.css"/>
+  <link rel="stylesheet" type="text/css"  href="assets/css/header.css"/>
 </head>
 <body>
+    <header class="custom-header">
+        <div class="d-flex justify-content-around">
+          <img class="logo" src="assets/images/logo.png">
+          <div class="d-flex align-items-center">
+              <h2 >Welcome to our Airport!</h2>
+          </div>          
+        </div>
+    </header>
+
   <app-root></app-root>
   <router-outlet></router-outlet>
+
+  <footer class="custom-header">
+      <div class="footer-items">
+          <img src="assets/images/logo.png">
+  
+          <div>
+            2018
+            <i class="far fa-copyright"></i>
+            Kostya Hrytsyuk
+          </div>
+      </div>  
+      
+    </footer>
 </body>
 </html>

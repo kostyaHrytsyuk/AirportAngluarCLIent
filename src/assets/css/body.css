@@ -1,0 +1,24 @@
+.air-grid 
+{
+  width: 60%;
+  height: 300px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px,1fr));
+  grid-gap: 15px;
+  justify-content: space-between;
+  align-content: center;
+  grid-area:blog; 
+  padding-top: 10px; 
+}
+
+
+
+.footer-items
+{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+}
