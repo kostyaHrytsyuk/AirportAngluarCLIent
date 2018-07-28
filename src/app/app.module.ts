@@ -29,7 +29,6 @@ import { CrewService } from './Crew/Service/crew.service';
 
 import { TicketListComponent } from './Ticket/ticket-list/ticket-list.component';
 import { TicketDetailsComponent } from './Ticket/ticket-details/ticket-details.component';
-import { TicketService } from './Ticket/Service/ticket.service';
 
 import { FlightListComponent } from './Flight/flight-list/flight-list.component';
 import { FlightDetailsComponent } from './Flight/flight-details/flight-details.component';
@@ -71,7 +70,6 @@ import { DepartureService } from './Departure/Service/departure.service';
   providers: [
     PilotService,
     CrewService,
-    TicketService,
     FlightService,
     DepartureService
   ],

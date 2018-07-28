@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 import { Ticket } from '../ticket';
-import { TicketService } from '../Service/ticket.service';
+import { TicketService } from '../../../shared/Ticket/ticket.service';
 
 @Component({
   selector: 'app-ticket-list',

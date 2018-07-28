@@ -1,6 +1,6 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { TicketService } from '../Service/ticket.service';
+import { TicketService } from '../../../shared/Ticket/ticket.service';
 import { Ticket } from '../ticket';
 
 @Component({
